@@ -1,6 +1,7 @@
 package com.jpabook.entity;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -20,4 +21,14 @@ public class Member {
 
     private int age;
 
+    @Builder
+    public Member(Long id, String username, int age) {
+        this.id = id;
+        this.username = username;
+        this.age = age;
+    }
+
+    public void updateAge(int age){
+        this.age = age;
+    }
 }
