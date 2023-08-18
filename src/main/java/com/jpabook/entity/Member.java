@@ -3,11 +3,15 @@ package com.jpabook.entity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
-@Getter(AccessLevel.PROTECTED)
+@DynamicUpdate
+@Getter
 @Table(name = "MEMBER")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class Member {
 
@@ -30,5 +34,9 @@ public class Member {
 
     public void updateAge(int age){
         this.age = age;
+    }
+
+    public void updateUsername(String name){
+        this.username = name;
     }
 }

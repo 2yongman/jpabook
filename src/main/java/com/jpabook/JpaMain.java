@@ -30,6 +30,7 @@ public class JpaMain {
         emf.close();
     }
 
+
     private static void logic(EntityManager em){
         Long memberID = 1L;
         Member member = Member.builder()
